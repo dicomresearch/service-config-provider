@@ -21,18 +21,13 @@ class DataProvider
      * @return mixed
      * @throws ProviderException
      */
-    public function get($section)
+    public function get($section, $criteria=[])
     {
         if (! is_string($section)) {
             throw ProviderException::sectionMustBeString($section);
         }
 
-        $result = $this->find($section, [], [], 0, 1);
-        if (0 === count($result)) {
-            throw ProviderException::emptySoapResult($section);
-        }
-        return reset($result);
-
+        return $this->soapClient->findOne($section, $criteria);
     }
 
     /**
