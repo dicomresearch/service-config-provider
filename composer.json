@@ -1,5 +1,5 @@
 {
-    "name": "serviceConfigProvider",
+    "name": "dicomresearch/service-config-provider",
     "description": "This library used to work with configuration migrations via data and structure providers",
     "license": "DICOM Consulting",
     "authors": [
